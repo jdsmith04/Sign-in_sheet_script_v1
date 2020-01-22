@@ -2,8 +2,10 @@ import pandas as pd
 from datetime import datetime
 from matplotlib import pyplot as plt
 
-# read in csv file
+# TODO: read from excel
+# TODO: convert from excel to csv
 
+# read in csv file
 csv = pd.read_csv('Sign-in Sheet.csv')
 print(csv)
 
@@ -56,6 +58,8 @@ for a in range(len(time_in)):
             visitors_per_hour['21:00'] += 1
 print(visitors_per_hour)
 
+# TODO: add in class labs per weekday (25 students)
+# TODO: timestamp x axis
 # x axis
 lab_hours = [k for k in visitors_per_hour]
 # y axis
@@ -63,6 +67,7 @@ visitor_data = [v for v in visitors_per_hour.values()]
 # y axis ticks
 number_of_students = [i for i in range(24 + 1)]
 
+# TODO: add in chart title
 plt.style.use('seaborn')
 plt.plot_date(lab_hours, visitor_data, linestyle='solid')
 plt.gcf().autofmt_xdate()
@@ -71,3 +76,5 @@ plt.ylabel('number of students in lab')
 plt.xlabel('lab hours')
 
 plt.show()
+# TODO: send charts to powerpoint
+# TODO: email powerpoints
